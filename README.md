@@ -88,7 +88,7 @@ Project_Portfolio
     - 분석 방향성이 한 부분으로 고정되어 있는 경향이 있었으므로, 여러 방향의 의견을 모아 볼 필요를 느꼈다.
     - 문제 상황이 발생했을 때, 서로 의견을 적극적으로 공유하고 빠르게 방향을 조정하며 프로젝트를 끝까지 마친 부분이 만족스럽다.
 
-[반도체 공정 센서 데이터 기반 공정 최적화] (https://github.com/tram-git/Project_portfolio/tree/main/SUV%20development%20strategy)<br>
+[반도체 공정 센서 데이터 기반 공정 최적화] (https://github.com/tram-git/Project_portfolio/tree/main/Semiconductor%20process%20optimization)<br>
 
 ***
 <h2> #3. Project - 감자과자 시장분석</h2>
