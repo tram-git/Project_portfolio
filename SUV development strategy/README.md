@@ -6,7 +6,10 @@
   이를 기반으로 하여 효율적이고 환경 친화적인(탄소 배출량 감축) 차량 개발 전략을 수립하는 것을 목표로 한다.<br>
   
   연비와 배출량에 영향을 미치는 주요 요인을 시각적으로 표현하여 관계를 분석하고<br>
-  효율적인 차량 개발과 정책 수립을 위한 인사이트를 도출한다.<br>
+  효율적인 차량 개발과 정책 수립을 위한 인사이트를 도출한다.<br><br>
+
+<img src="https://github.com/user-attachments/assets/057c2f0d-f51c-44d4-a5ac-3bfd6214e411" width="49.9%"/>
+<img src="https://github.com/user-attachments/assets/de65a5b3-947e-42a6-a0d8-9c6a8ef91cda" width="49.5%"/>
 
 ### Summary
 
