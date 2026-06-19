@@ -1,8 +1,4 @@
-Project_Portfolio - Project 2
-================
-<br>
 
-***
 <h2> # Project.2 - 반도체 공정 센서 데이터 기반 공정 최적화 </h2>
 
 ### Background
@@ -49,5 +45,3 @@ Project_Portfolio - Project 2
     - 데이터 분석 단계의 논리적 흐름을 꾸준히 확인할 필요가 있다.
     - 분석 방향성이 한 부분으로 고정되어 있는 경향이 있었으므로, 여러 방향의 의견을 모아 볼 필요를 느꼈다.
     - 문제 상황이 발생했을 때, 의견을 적극적으로 공유하고 방향을 조정하며 프로젝트를 끝까지 마친 부분이 만족스럽다.
-
-[반도체 공정 센서 데이터 기반 공정 최적화] (https://github.com/tram-git/Project_portfolio/tree/main/Semiconductor%20process%20optimization)<br>
