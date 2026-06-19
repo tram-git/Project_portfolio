@@ -1,8 +1,4 @@
-Project_Portfolio - Project 3
-================
-<br>
 
-***
 <h2> # Project.3 - 줄기세포 분화 가능성 탐지 </h2>
 
 ### Background
@@ -63,4 +59,3 @@ Project_Portfolio - Project 3
     - 줄기세포 분화 데이터가 쌓이면 새로운 모델을 형성하고 교체하는 것이 현 상황에서 자연스러운 흐름으로 보인다.
     - 모델의 완성도는 아쉬우나, 시계열 특성을 가진 데이터를 각 일자별로 예측해 보았던 경험이 만족스럽다.
 
-[줄기세포 분화 가능성 탐지] (https://github.com/tram-git/Project_portfolio/tree/main/Semiconductor%20process%20optimization)<br>
