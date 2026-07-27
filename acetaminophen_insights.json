@@ -1,0 +1,876 @@
+{
+  "meta": {
+    "title": "아세트아미노펜 단일/복합제 FAERS 부작용 분석 - 소비자 안내용 인사이트 데이터",
+    "source": "FAERS(FDA 부작용 자발보고 시스템) 기반 아세트아미노펜 51개 브랜드 전체행 분석",
+    "total_reports_n": 1194,
+    "total_brands": 51,
+    "combination_groups": 11,
+    "usage_note": "이 JSON은 OpenAI API가 소비자 질의에 답할 때 참조하는 근거자료입니다. 각 insight의 confidence 필드를 반드시 확인하여, low/medium 신뢰도 항목은 단정적으로 전달하지 말고 '~일 수 있습니다' 톤으로 안내하세요. statistical_caveat이 있는 항목은 반드시 함께 전달하세요.",
+    "data_quality_flags": [
+      "PDF 텍스트 중 특수문자 '⸝'는 쉼표의 인코딩 오류로 추정, 쉼표로 해석함",
+      "'아세틸아미노펜'은 '아세트아미노펜'의 오타로 판단, 정정함",
+      "고령층 대상 문구 중 '2.5배' 표현이 별도 계산된 OR=2.24(20.5% vs 10.3%)와 정확히 일치하지 않아 원문 그대로 병기함"
+    ]
+  },
+  "brand_lookup": {
+    "ACETAMINOPHEN EXTRA STRENGTH": "apap_single",
+    "ACETAMINOPHEN ORAL SOLUTION": "apap_single",
+    "AMAZON BASIC CARE ACETAMINOPHEN": "apap_single",
+    "APAP": "apap_single",
+    "CHILDRENS TYLENOL": "apap_single",
+    "EXTRA STRENGTH ACETAMINOPHEN": "apap_single",
+    "INFANTS PAIN FEVER": "apap_single",
+    "INFANTS TYLENOL": "apap_single",
+    "MAXIMUM STRENGTH NON-ASPIRIN 100": "apap_single",
+    "MAXIMUM STRENGTH NON-ASPIRIN 250": "apap_single",
+    "PAIN RELIEF": "apap_single",
+    "PAIN RELIEVER": "apap_single",
+    "PANADOL": "apap_single",
+    "PANADOL EXTRA STRENGTH": "apap_single",
+    "TYLENOL 8 HR ARTHRITIS PAIN": "apap_single",
+    "TYLENOL 8HR": "apap_single",
+    "TYLENOL EXTRA STRENGTH": "apap_single",
+    "TYLENOL EXTRA STRENGTH CAPLET": "apap_single",
+    "TYLENOL REGULAR STRENGTH": "apap_single",
+    "PANADOL COLD AND FLU NONDROWSY": "apap_phenylephrine",
+    "TYLENOL COLD PLUS HEAD CONGESTION SEVERE": "apap_phenylephrine",
+    "CORICIDIN HBP COLD AND FLU": "apap_chlorpheniramine_dextromethorphan",
+    "ALKA-SELTZER PLUS COLD AND COUGH": "apap_chlorpheniramine_dextromethorphan",
+    "CHILDRENS TYLENOL COLD PLUS COUGH PLUS RUNNY NOSE": "apap_chlorpheniramine_dextromethorphan",
+    "CHILDRENS TYLENOL COLD PLUS FLU": "apap_chlorpheniramine_dextromethorphan",
+    "EXCEDRIN EXTRA STRENGTH GELTABS": "apap_aspirin_caffeine",
+    "EXCEDRIN EXTRA STRENGTH HEADACHE": "apap_aspirin_caffeine",
+    "EXCEDRIN EXTRA STRENGTH PAIN RELIEVER": "apap_aspirin_caffeine",
+    "EXCEDRIN MIGRAINE": "apap_aspirin_caffeine",
+    "EXCEDRIN MIGRAINE GELTABS": "apap_aspirin_caffeine",
+    "GOODYS EXTRA STRENGTH": "apap_aspirin_caffeine",
+    "CHILDRENS TYLENOL COLD PLUS COUGH PLUS SORE THROAT": "apap_dextromethorphan",
+    "ACETAMINOPHEN PM": "apap_diphenhydramine",
+    "ACETAMINOPHEN PM EXTRA STRENGTH": "apap_diphenhydramine",
+    "EXTRA STRENGTH ACETAMINOPHEN PM": "apap_diphenhydramine",
+    "PAIN RELIEF PM EXTRA STRENGTH": "apap_diphenhydramine",
+    "PANADOL PM": "apap_diphenhydramine",
+    "PERCOGESIC ORIGINAL STRENGTH": "apap_diphenhydramine",
+    "TYLENOL PM EXTRA STRENGTH": "apap_diphenhydramine",
+    "TYLENOL PM EXTRA STRENGTH, CVP HEALTH": "apap_diphenhydramine",
+    "VICKS NYQUIL HIGH BLOOD PRESSURE COLD AND FLU": "apap_dextromethorphan_doxylamine",
+    "VICKS NYQUIL FOR PEOPLE WITH DIABETES COLD AND FLU": "apap_dextromethorphan_doxylamine",
+    "DRX CHOICE FRUIT PUNCH": "apap_dextromethorphan_doxylamine",
+    "PANADOL EXTRA": "apap_caffeine",
+    "TENSION HEADACHE PAIN RELIEVING AID": "apap_caffeine",
+    "VICKS NYQUIL INTENSE FLU": "apap_dextromethorphan_doxylamine_phenylephrine",
+    "VICKS NYQUIL SEVERE COLD AND FLU": "apap_dextromethorphan_doxylamine_phenylephrine",
+    "VICKS NYQUIL ULTRA CONCENTRATED COLD AND FLU": "apap_dextromethorphan_doxylamine_phenylephrine",
+    "MUCINEX FAST-MAX COLD, FLU AND SORE THROAT": "apap_dextromethorphan_guaifenesin_phenylephrine",
+    "MUCINEX FAST-MAX COLD, FLU AND SORE THROAT MAXIMUM STRENGTH": "apap_dextromethorphan_guaifenesin_phenylephrine",
+    "MAXIMUM STRENGTH MUCINEX SINUS-MAX SEVERE CONGESTION AND PAIN": "apap_guaifenesin_phenylephrine",
+    "어린이 타이레놀": "apap_single",
+    "어린이타이레놀": "apap_single",
+    "유아 타이레놀": "apap_single",
+    "영아 타이레놀": "apap_single",
+    "타이레놀 관절염": "apap_single",
+    "타이레놀 8시간": "apap_single",
+    "타이레놀 8시간이알서방정": "apap_single",
+    "타이레놀 서방정": "apap_single",
+    "타이레놀 엑스트라": "apap_single",
+    "타이레놀 이알": "apap_single",
+    "타이레놀 캐플릿": "apap_single",
+    "타이레놀정": "apap_single",
+    "타이레놀": "apap_single",
+    "타이레놀 콜드": "apap_phenylephrine",
+    "어린이 타이레놀 콜드": "apap_chlorpheniramine_dextromethorphan",
+    "어린이 타이레놀 플루": "apap_chlorpheniramine_dextromethorphan",
+    "어린이 타이레놀 콜드 기침": "apap_dextromethorphan",
+    "타이레놀 피엠": "apap_diphenhydramine"
+  },
+  "brand_lookup_usage": "브랜드(제품)명을 받으면: ① 대문자 변환 후 brand_lookup에서 정확히 일치하는 키를 찾는다(영문·한글 별칭 모두 이 딕셔너리에 포함되어 있음). ② 없으면 brand_lookup 키들과 부분 문자열 포함 여부로 재시도한다. ③ 그래도 없고 입력에 한글 성분명이 포함되어 있으면 ingredient_fallback_ko에서 후보 combination id를 찾아 제시하되, 후보가 2개 이상이면 정확한 제품명을 되묻는다. ④ 그래도 매칭이 없으면 '이 제품은 현재 분석 데이터에 없습니다. 정확한 영문 제품명이나 포함된 성분을 알려주시면 다시 확인해드릴게요'라고 응답한다. ※ 51개 브랜드 중 타이레놀 계열 외에는 한국 시장 유통 여부가 확인되지 않은 미국 제품명이므로, 확인되지 않은 한글 별칭을 임의로 추측해 매칭하지 말 것.",
+  "ingredient_combinations": [
+    {
+      "id": "apap_single",
+      "combination": "Acetaminophen (단일)",
+      "brand_count": 19,
+      "brands": [
+        "ACETAMINOPHEN EXTRA STRENGTH",
+        "ACETAMINOPHEN ORAL SOLUTION",
+        "AMAZON BASIC CARE ACETAMINOPHEN",
+        "APAP",
+        "CHILDRENS TYLENOL",
+        "EXTRA STRENGTH ACETAMINOPHEN",
+        "INFANTS PAIN FEVER",
+        "INFANTS TYLENOL",
+        "MAXIMUM STRENGTH NON-ASPIRIN 100",
+        "MAXIMUM STRENGTH NON-ASPIRIN 250",
+        "PAIN RELIEF",
+        "PAIN RELIEVER",
+        "PANADOL",
+        "PANADOL EXTRA STRENGTH",
+        "TYLENOL 8 HR ARTHRITIS PAIN",
+        "TYLENOL 8HR",
+        "TYLENOL EXTRA STRENGTH",
+        "TYLENOL EXTRA STRENGTH CAPLET",
+        "TYLENOL REGULAR STRENGTH"
+      ],
+      "n_reports": 1194,
+      "pct_of_total": 80.9,
+      "detail_analysis_available": false,
+      "note": "그룹 전체(1194건) 규모의 기반 데이터. 별도 세부 분석은 이전 세션의 아세트아미노펜 단일그룹 심층분석(연령/성별/반응 카테고리)을 참조.",
+      "brand_aliases": {
+        "CHILDRENS TYLENOL": [
+          "어린이 타이레놀",
+          "어린이타이레놀"
+        ],
+        "INFANTS TYLENOL": [
+          "유아 타이레놀",
+          "영아 타이레놀"
+        ],
+        "TYLENOL 8 HR ARTHRITIS PAIN": [
+          "타이레놀 관절염",
+          "타이레놀 8시간"
+        ],
+        "TYLENOL 8HR": [
+          "타이레놀 8시간이알서방정",
+          "타이레놀 서방정"
+        ],
+        "TYLENOL EXTRA STRENGTH": [
+          "타이레놀 엑스트라",
+          "타이레놀 이알"
+        ],
+        "TYLENOL EXTRA STRENGTH CAPLET": [
+          "타이레놀 캐플릿"
+        ],
+        "TYLENOL REGULAR STRENGTH": [
+          "타이레놀정",
+          "타이레놀"
+        ]
+      }
+    },
+    {
+      "id": "apap_phenylephrine",
+      "combination": "Acetaminophen + Phenylephrine",
+      "brand_count": 2,
+      "brands": [
+        "PANADOL COLD AND FLU NONDROWSY",
+        "TYLENOL COLD PLUS HEAD CONGESTION SEVERE"
+      ],
+      "n_reports": 171,
+      "pct_of_total": 11.6,
+      "detail_analysis_available": true,
+      "severity": {
+        "serious_pct": null,
+        "note": "전체 데이터셋과 큰 차이 없음(성별 p=0.50)"
+      },
+      "demographics": {
+        "sex": {
+          "finding": "여성 비중이 전체 데이터와 거의 동일 (통계적으로 유의한 차이 없음, p=0.50)",
+          "confidence": "high",
+          "statistical_caveat": "이 조합군만의 특별한 성별 편향은 없음"
+        },
+        "age": {
+          "finding": "66세 이상 고령층에서 다소 높고, 20-40대 성인층에서 다소 낮은 경향",
+          "confidence": "medium"
+        },
+        "polypharmacy": {
+          "finding": "Polypharmacy(6+) 비중이 전체 평균과 유사"
+        }
+      },
+      "key_findings": [
+        {
+          "id": "gi_bleed_signal",
+          "finding": "위장관 출혈이 이 조합에 특이적인 진짜 신호로 확인됨",
+          "stats": "나머지 그룹 대비 2.24배 (20.5% vs 10.3%, p=0.0003). 연령 보정 후에도 유지(66+: p<0.0001, 66미만: p=0.005). 자살시도·과량투여 제외 후에도 유지(10.4% vs 1.0%, p<0.0001). 반응 개수와 무관하게 발생(독립적 신호). 입원율 크게 높임(71.4% vs 39.7%, p=0.001)",
+          "confidence": "high",
+          "interpretation": "이 조합(아세트아미노펜+페닐레프린) 고유의 위험 신호로 판단됨. 다른 교란변수(자살시도, 다발성 반응)로 설명되지 않음",
+          "mechanism": "페닐레프린은 알파-1 아드레날린 수용체 작용제로 혈관수축을 일으키나, 경구 복용 시 대부분 장·간에서 대사되어 생체이용률이 1% 미만에 불과함. 효과 미체감으로 반복/과다 복용 → 위장관 출혈·심혈관 부담. '약효 없음(Drug ineffective)' 보고가 상위인 것과 이 기전이 연결됨"
+        },
+        {
+          "id": "hepatic_confound",
+          "finding": "이 조합 내 간독성은 조합 고유의 위험이 아니라 아세트아미노펜 자체의 일반적 특성(confound)으로 판단됨",
+          "stats": "나머지 아세트아미노펜 그룹보다 오히려 낮음(12.3% vs 19.8%, p=0.020). 나머지 그룹 간독성 케이스의 97.2%가 순수 단일 APAP 제품에서 발생. target군 내 간독성은 자살시도/의도적 과량투여와 강하게 연관(OR=5.17, p=0.002). 반응 개수 많은 다발성·복합 중증 케이스에서 주로 발생(경계적 유의, p=0.079)",
+          "confidence": "medium-high",
+          "interpretation": "복합 감기약은 1회 투여당 APAP 함량이 제한적이라, 순수 APAP 단일제보다 대량 중복복용 경로 자체가 구조적으로 적음. Target군에서 간독성이 낮게 나온 건 이 조합이 안전해서가 아니라 구조적 이유."
+        },
+        {
+          "id": "suicide_link",
+          "finding": "위장관 출혈과 간독성 모두 자살시도/의도적 오남용과 연관되나, 위장관 출혈은 그와 무관하게도 발생하는 독립 신호",
+          "stats": "위장관 출혈: 자살시도 관련 17.1% vs 없는 경우 1.5%(OR=13.86, p=0.001). 간독성: 자살시도 관련 9.5% vs 4.0%(OR=2.53, p=0.26, 유의하지 않음 - 표본 작음)",
+          "confidence": "medium",
+          "statistical_caveat": "간독성-자살시도 연관은 통계적으로 유의하지 않음(표본 부족)"
+        },
+        {
+          "id": "skin_reaction",
+          "finding": "피부반응 방향성(66세 미만·다발성증상 경향) 있으나 확정 불가",
+          "confidence": "low",
+          "statistical_caveat": "n=13으로 통계적 검정력 부족, 추가 표본 필요"
+        }
+      ],
+      "consumer_messages": [
+        {
+          "target": "만 60세 이상 고령층",
+          "message": "이 연령대에서는 이 성분 조합(아세트아미노펜+페닐레프린)이 20-40대보다 위장관 출혈 반응이 더 많이 보고되었습니다. 만성질환이 있다면 이중으로 주의가 필요합니다.",
+          "confidence": "medium"
+        },
+        {
+          "target": "여러 감기약·두통약을 함께 복용하는 사람",
+          "message": "순수 아세트아미노펜 단일제에서 간독성 비중이 높게 나타난 것은, 감기약과 두통약 모두에 아세트아미노펜이 들어있어 중복 복용하는 경우가 있기 때문일 수 있습니다. 다른 약의 성분표를 확인해 아세트아미노펜 중복 여부를 점검하세요.",
+          "confidence": "medium"
+        }
+      ],
+      "references": [
+        "https://pubmed.ncbi.nlm.nih.gov/31840297/",
+        "https://pubmed.ncbi.nlm.nih.gov/40497192/",
+        "https://pubmed.ncbi.nlm.nih.gov/10951229/"
+      ],
+      "brand_aliases": {
+        "TYLENOL COLD PLUS HEAD CONGESTION SEVERE": [
+          "타이레놀 콜드"
+        ]
+      }
+    },
+    {
+      "id": "apap_chlorpheniramine_dextromethorphan",
+      "combination": "Acetaminophen + Chlorpheniramine + Dextromethorphan",
+      "brand_count": 4,
+      "brands": [
+        "CORICIDIN HBP COLD AND FLU",
+        "ALKA-SELTZER PLUS COLD AND COUGH",
+        "CHILDRENS TYLENOL COLD PLUS COUGH PLUS RUNNY NOSE",
+        "CHILDRENS TYLENOL COLD PLUS FLU"
+      ],
+      "n_reports": 28,
+      "pct_of_total": 1.9,
+      "detail_analysis_available": true,
+      "severity": {
+        "breakdown": "28건 중 25건이 serious_flags '미상(Unknown)'. 중대 플래그: 사망 2건, 입원 1건, 생명위협 1건",
+        "confidence": "medium",
+        "statistical_caveat": "대부분 결과 미기재이며, 명시된 중대 사례는 소수. 경증/미상 보고가 우세"
+      },
+      "demographics": {
+        "age": {
+          "finding": "소아+영아 12건(43%)으로 최다. 성인·중년(19-65세) 0건, 청소년 2건, 81세+ 노년 2건, 나머지 연령미상 12건",
+          "confidence": "high",
+          "structural_note": "성인·중년 0건은 우연이 아니라 브랜드 포트폴리오 구조 때문: 이 조합 28건 중 26건(92.9%)이 '어린이 타이레놀 감기약 계열' 브랜드. 유일한 성인 지향 브랜드인 '알카셀처 플러스'조차 age_group이 'Unknown'으로 기록되어, 이 조합 데이터 안에는 연령이 확인된 성인 사례가 애초에 존재하지 않음"
+        },
+        "sex": {
+          "finding": "여성 54%(15건), 남성 32%(9건), 미상 14%(4건) - 뚜렷한 성별 편중은 아님",
+          "confidence": "medium"
+        },
+        "polypharmacy": {
+          "finding": "단독 복용 75%(21건)로 대부분 - 다른 약과 병용보다 이 제품 단독 사용 상황에서 주로 보고됨",
+          "confidence": "high"
+        }
+      },
+      "top_indications": [
+        "적응증 미상 8건",
+        "통증 4건",
+        "두통 3건",
+        "발열 3건",
+        "우발적 노출 2건",
+        "편도절제 1건"
+      ],
+      "top_reactions": [
+        "허가외 사용 7건",
+        "용량 오투여 4건",
+        "약효 없음 3건",
+        "미승인 적응증 사용 3건",
+        "고의적 오용 2건",
+        "사용법 오류 2건",
+        "소아 우발적 노출 2건",
+        "제품 사용 문제 2건"
+      ],
+      "key_findings": [
+        {
+          "id": "medication_error_dominant",
+          "finding": "상위 이상반응이 약리 부작용이 아니라 '허가외 사용·용량 오투여·소아 우발노출·부적절 연령 투여' 등 사용 오류(medication error) 계열에 집중",
+          "confidence": "high",
+          "interpretation": "성분 자체의 중증 신호는 약하고, '잘못 쓰는 방식'에서 이상사례가 보고되는 경향. 안전 개입 우선순위는 성분 독성보다 라벨/포장/보호자 투약 교육"
+        },
+        {
+          "id": "age_specific_error_pattern",
+          "finding": "연령대별로 사용 오류의 양상이 다름 - 영아·소아(n=12)는 '용량 오투여'가, 장년·고령(n=2)은 전부 '허가외 사용'",
+          "confidence": "medium",
+          "statistical_caveat": "고령 n=2로 매우 작음"
+        },
+        {
+          "id": "brand_concentration",
+          "finding": "28건 중 26건(93%)이 '어린이 타이레놀 감기약 계열' 단일 브랜드에서 발생 - 조합군 전체의 특성이라기보다 이 한 브랜드의 특성일 수 있음",
+          "confidence": "high"
+        }
+      ],
+      "overall_caveat": "n=28 소표본 + FAERS 자발보고(선택편향·true negative 부재)이므로 인과가 아닌 보고 경향으로 해석해야 함",
+      "consumer_messages": [
+        {
+          "target": "자녀에게 감기약을 먹이는 보호자",
+          "message": "계량컵/스포이드로 정량을 재세요. 나이에 맞는 제품인지 확인하세요.",
+          "basis": "소아+영아 43%(vs 전체 6.5%), 영아·소아 Top반응='용량 오투여'"
+        },
+        {
+          "target": "'어린이 타이레놀 감기약' 계열 사용자",
+          "message": "이 조합 보고의 대부분이 이 제품에서 나왔습니다. 라벨의 최대 용량·사용법을 확인하세요.",
+          "basis": "조합 보고의 93%(26/28건)가 이 브랜드 계열"
+        },
+        {
+          "target": "다른 감기약과 병용하는 사람",
+          "message": "다른 감기약에도 아세트아미노펜이 들어있을 수 있습니다. 성분표를 확인하세요.",
+          "basis": "단독사용 75%(vs 대조군 26%) - 병용 시 리스크 패턴이 다름"
+        },
+        {
+          "target": "장년·고령 사용자",
+          "message": "정해진 용법·용량 범위 안에서만 사용하세요.",
+          "basis": "n=2로 작지만 100% '허가외 사용'"
+        },
+        {
+          "target": "알카셀처 플러스(성인용) 사용자",
+          "message": "실신감, 토혈, 흑색변, 복통 지속, 알레르기 반응 시 즉시 중단·응급처치하세요.",
+          "basis": "이 조합 내 유일한 성인 지향 브랜드, 가장 심각한 결과(입원+생명위협) 기록"
+        },
+        {
+          "target": "일반 소비자",
+          "message": "이 조합의 위험은 성분 독성보다 '잘못된 사용'에서 주로 발생합니다. 라벨의 용법·용량을 지키세요.",
+          "basis": "이상반응 Top4/Top20이 독성보다 사용오류(허가외 사용·오투여·부적절 연령 투여) 위주"
+        },
+        {
+          "target": "성인 일반 사용자",
+          "message": "이 성분조합은 대부분 어린이용 제품에서 보고되었습니다.",
+          "basis": "조합군 내 성인·중년 사례 0건(브랜드 포트폴리오가 소아용 위주라는 구조적 이유)"
+        }
+      ],
+      "brand_aliases": {
+        "CHILDRENS TYLENOL COLD PLUS COUGH PLUS RUNNY NOSE": [
+          "어린이 타이레놀 콜드"
+        ],
+        "CHILDRENS TYLENOL COLD PLUS FLU": [
+          "어린이 타이레놀 플루"
+        ]
+      }
+    },
+    {
+      "id": "apap_aspirin_caffeine",
+      "combination": "Acetaminophen + Aspirin + Caffeine",
+      "brand_count": 6,
+      "brands": [
+        "EXCEDRIN EXTRA STRENGTH GELTABS",
+        "EXCEDRIN EXTRA STRENGTH HEADACHE",
+        "EXCEDRIN EXTRA STRENGTH PAIN RELIEVER",
+        "EXCEDRIN MIGRAINE",
+        "EXCEDRIN MIGRAINE GELTABS",
+        "GOODYS EXTRA STRENGTH"
+      ],
+      "n_reports": 26,
+      "pct_of_total": 1.8,
+      "detail_analysis_available": true,
+      "severity": {
+        "breakdown": {
+          "중대_pct": 26.9,
+          "사망_pct": 0.0,
+          "입원_pct": 11.5,
+          "생명위협_pct": 0.0,
+          "후유장애_pct": 0.0
+        },
+        "confidence": "low",
+        "statistical_caveat": "표본 26건으로 작아 중대 사례 비율의 95% 신뢰구간은 약 13.7~46.1%, 입원 비율은 약 4.0~29.0%로 넓음. 26.9%를 실제 복용자의 중대 부작용 발생률로 해석해서는 안 됨. 중대 사례 7건의 내용은 서로 이질적이라 하나의 독성기전으로 설명되지 않음. 효과 부족/제품 문제만 보고된 11건에서는 중대 사례 없었고, 실제 신체증상 포함 15건 중 7건이 중대였음 - 전체 중대율보다 어떤 반응이 함께 보고되었는지 분리해서 보는 것이 중요"
+      },
+      "demographics": {
+        "age": {
+          "finding": "연령이 확인된 보고는 3건뿐(성인 1건, 중년 2건). 나머지 88.5%가 Unknown",
+          "confidence": "low",
+          "statistical_caveat": "특정 연령대의 부작용이 많다고 판단하거나 통계검정을 수행하기에는 정보 부족"
+        },
+        "sex": {
+          "finding": "여성 53.8%, 남성 19.2%, 미상 26.9%",
+          "confidence": "low",
+          "statistical_caveat": "여성 보고가 많다고 해서 여성에게 부작용이 더 잘 발생한다는 의미로 해석 불가 - 성별에 따른 제품 사용량, 편두통 환자의 성별 구성, 보고 행동 차이 등 분모 정보 없음. 미국 인구기반 연구에서 편두통 유병률 자체가 여성 17.5% vs 남성 8.6%로 여성이 높음(외부 근거)"
+        },
+        "polypharmacy": {
+          "finding": "단독복용(num_drugs=1) 69.2%로 대부분"
+        }
+      },
+      "top_indications": [
+        "Migraine(편두통) 13건(50%)",
+        "Product Used For Unknown Indication 5건",
+        "Headache 3건",
+        "Unknown 2건",
+        "Pain 2건"
+      ],
+      "top_reactions": [
+        {
+          "reaction": "Drug ineffective",
+          "n": 18,
+          "pct": 69.2,
+          "category": "효과·제품 관련"
+        },
+        {
+          "reaction": "Product quality issue",
+          "n": 7,
+          "pct": 26.9,
+          "category": "효과·제품 관련"
+        },
+        {
+          "reaction": "Headache",
+          "n": 5,
+          "pct": 19.2,
+          "category": "신체 이상반응"
+        },
+        {
+          "reaction": "Product complaint",
+          "n": 3,
+          "pct": 11.5,
+          "category": "효과·제품 관련"
+        },
+        {
+          "reaction": "Product use issue",
+          "n": 2,
+          "pct": 7.7,
+          "category": "효과·제품 관련"
+        },
+        {
+          "reaction": "Ulcer",
+          "n": 2,
+          "pct": 7.7,
+          "category": "신체 이상반응"
+        },
+        {
+          "reaction": "Muscular weakness",
+          "n": 1,
+          "pct": 3.8,
+          "category": "신체 이상반응"
+        },
+        {
+          "reaction": "Hypoaesthesia oral",
+          "n": 1,
+          "pct": 3.8,
+          "category": "신체 이상반응"
+        }
+      ],
+      "key_findings": [
+        {
+          "id": "drug_ineffective_misinterpretation_risk",
+          "finding": "'Drug ineffective'(69.2%)는 약 자체의 실패라기보다 '효과가 없었다고 보고된 상황'이 집중된 결과 - 곧바로 '이 약은 효과가 없다'로 해석하면 안 됨",
+          "confidence": "high",
+          "detail": "18건 중 7건은 Product quality issue와 함께, 3건은 Headache와 함께, 2건은 궤양 관련 반응과 함께 보고됨. 효과부족 보고에는 기존 편두통 미개선, 제품품질 불만 동반신고, 부적합 제품 사용, 복용법 문제, 원인이 다른 두통 등이 혼합되어 있을 가능성",
+          "counter_evidence": "실제 무작위배정 임상시험에서는 아스피린+아세트아미노펜+카페인 고정복합제가 각 단일성분이나 카페인 제외 조합보다 두통완화에서 우수한 결과를 보임(참고문헌 확인됨). 따라서 FAERS의 Drug ineffective 비율은 임상적 약효율이 아니라 '효과 부족 경험'이 신고된 사례의 구성비로 봐야 함",
+          "reference": "https://pubmed.ncbi.nlm.nih.gov/16162254/"
+        },
+        {
+          "id": "headache_overlap_structure",
+          "finding": "'Headache'가 이상반응으로 나타난 이유는 적응증과 이상반응이 겹치는 구조 때문일 수 있음",
+          "confidence": "medium",
+          "detail": "편두통 13건, 두통 3건이 적응증으로 기록, 이상반응에서도 두통 5건(3건은 Drug ineffective와 동반). 새로 발생한 두통, 기존 편두통 지속, 효과부족으로 통증 미개선, 원 질환 중복기록, 진통제 반복사용으로 인한 악화가 혼재 가능",
+          "mechanism_note": "카페인 포함 복합진통제를 반복적으로 과다 사용하면 약물과용두통과 관련될 수 있음. Excedrin Migraine 라벨에는 한 달 10일 이상 사용 시 두통 악화 경고 포함, 국제두통질환분류에서도 카페인 포함 복합진통제 과용을 별도 분류함"
+        },
+        {
+          "id": "ulcer_signal_exploratory",
+          "finding": "궤양(Ulcer 2건 + Gastrointestinal ulcer 1건)은 아스피린 포함 조합의 알려진 약리학적 특성과 방향 일치하는 탐색적 신호",
+          "confidence": "low",
+          "statistical_caveat": "표본 3건뿐이라 위험 크기 확정 불가. 나머지 아세트아미노펜 보고 대비 탐색적으로 높은 불균형이 관찰됨",
+          "mechanism": "아스피린은 위장관 점막 보호 프로스타글란딘 생성을 감소시키고 점액·중탄산 분비 및 점막방어를 약화. 동시에 혈소판 기능 억제로 점막손상 시 출혈 위험 증가. 공식 라벨상 고위험군: 만 60세 이상, 위궤양/위장관출혈 과거력, 항응고제/스테로이드 복용자, 다른 NSAID 복용자, 잦은 음주자, 권장량 초과/장기 복용자"
+        }
+      ],
+      "consumer_messages": [
+        {
+          "target": "편두통·두통으로 처음 복용하는 사람",
+          "message": "첫 복용 후에도 편두통이 낫지 않거나 악화되면 용량을 늘리지 말고 진료를 받아보세요."
+        },
+        {
+          "target": "한 달에 진통제를 자주 복용하는 사람",
+          "message": "복합 두통약을 한 달에 10일 이상 사용하면 오히려 두통이 악화될 수 있습니다(약물과용두통)."
+        },
+        {
+          "target": "위궤양·위장관 출혈 경험자",
+          "message": "이 제품에는 아스피린이 포함되어 있어 위궤양·출혈 경험이 있다면 복용 전 상담이 필요합니다."
+        },
+        {
+          "target": "만 60세 이상",
+          "message": "위장관 출혈 위험을 더 주의해야 합니다."
+        },
+        {
+          "target": "항응고제·스테로이드·다른 NSAID 복용자",
+          "message": "혈액희석제, 스테로이드, 이부프로펜·나프록센 등을 복용 중이라면 함께 복용하지 말고 전문가에게 확인하세요."
+        },
+        {
+          "target": "다른 감기약·진통제를 함께 먹는 사람",
+          "message": "다른 약에도 아세트아미노펜이나 아스피린이 들어 있을 수 있습니다. 성분 중복을 확인하세요."
+        },
+        {
+          "target": "간질환자 또는 음주가 잦은 사람",
+          "message": "간질환이 있거나 음주가 잦다면 아세트아미노펜 중복과 최대 복용량을 특히 주의하세요."
+        },
+        {
+          "target": "커피·에너지음료를 많이 마시는 사람",
+          "message": "권장 복용량에도 커피 한 잔 정도의 카페인이 포함될 수 있습니다. 불면·초조·두근거림에 주의하세요.",
+          "reference": "DailyMed"
+        },
+        {
+          "target": "카페인에 민감하거나 불면·심계항진이 있는 사람",
+          "message": "복용 후 잠이 오지 않거나 심장이 빨리 뛰면 추가 카페인 섭취를 피하세요."
+        },
+        {
+          "target": "어린이·청소년",
+          "message": "독감이나 수두 증상이 있는 어린이·청소년은 아스피린 함유 제품을 사용하면 안 됩니다(라이 증후군 경고).",
+          "reference": "DailyMed"
+        },
+        {
+          "target": "임신·수유 중인 사람",
+          "message": "임신·수유 중에는 전문가와 상담하고, 특히 임신 후기에는 의사의 지시 없이 사용하지 마세요.",
+          "reference": "DailyMed"
+        },
+        {
+          "target": "제품 브랜드를 변경하려는 사람",
+          "message": "성분 조합이 같아도 브랜드별 1회 용량과 하루 최대량은 다릅니다."
+        }
+      ]
+    },
+    {
+      "id": "apap_dextromethorphan",
+      "combination": "Acetaminophen + Dextromethorphan",
+      "brand_count": 1,
+      "brands": [
+        "CHILDRENS TYLENOL COLD PLUS COUGH PLUS SORE THROAT"
+      ],
+      "n_reports": 36,
+      "pct_of_total": 1.8,
+      "detail_analysis_available": true,
+      "severity": {
+        "breakdown": {
+          "심각_pct": 33.3,
+          "사망_pct": 5.6,
+          "입원_pct": 5.6,
+          "생명위협_pct": 2.8,
+          "후유장애_pct": 0.0
+        },
+        "confidence": "medium",
+        "note": "3개 상세분석 조합(Phenylephrine/Chlorpheniramine+Dextromethorphan/Diphenhydramine) 중 다섯 지표 전부 최저 - 가장 경한 위해 프로파일"
+      },
+      "demographics": {
+        "age": {
+          "finding": "Child(3-12) 25.0% + Infant(0-2) 8.3% = 33.3%가 소아. Unknown(38.9%) 제외한 성인 연령대(Adult·Middle-Aged·Senior·Elderly·Teen)는 각각 5.6%씩 고르게 분산 - 소아가 특정 가능한 연령대 중 압도적 최다",
+          "confidence": "high"
+        },
+        "sex": {
+          "finding": "여성 50.0%, 남성 33.3%, Unknown 16.7% - 3개 조합 중 Unknown 비중 최고"
+        },
+        "polypharmacy": {
+          "finding": "Single(단독복용) 61.1% - 3개 조합 중 유일하게 과반. 소아·영유아 중심 사용자층이라 기저질환 병용약물이 구조적으로 적음"
+        }
+      },
+      "top_indications": [
+        "Product Used For Unknown Indication 33.3%",
+        "Pain 11.1%",
+        "Headache 8.3%",
+        "Pyrexia 8.3%",
+        "Accidental Exposure To Product 5.6%(3개 조합 중 유일하게 Top5 진입)"
+      ],
+      "top_reactions": [
+        "Off label use(1위)",
+        "Incorrect dose administered",
+        "Product use in unapproved indication",
+        "Product use issue",
+        "Wrong technique in product usage process",
+        "Drug ineffective",
+        "Accidental exposure to product by child",
+        "Product administered to patient of inappropriate age"
+      ],
+      "key_findings": [
+        {
+          "id": "medication_error_not_toxicity",
+          "finding": "이상반응 상위 전체가 투약오류·오사용 계열('Off label use' 1위) - 약물 자체 부작용보다 '잘못 쓴 것'이 핵심 문제",
+          "confidence": "high"
+        },
+        {
+          "id": "accidental_pediatric_exposure",
+          "finding": "소아용 달콤한 시럽·향 첨가 액상 제형 특성상 아이들이 사탕/음료로 착각해 스스로 열어 마시는 우발적 노출 사고가 발생하기 쉬움",
+          "confidence": "medium",
+          "mechanism": "덱스트로메토르판은 NMDA 수용체 길항·시그마-1 작용을 가진 중추신경 활성물질로, 소량 노출되어도 진정·환각 등 반응 가능 - 제형(액상·매력적 포장)과 약리학(중추신경 작용)이 함께 만드는 위험"
+        },
+        {
+          "id": "single_use_structural",
+          "finding": "단독복용 61.1%는 이 조합의 약리작용이 아니라 사용자 모집단(소아, 기저질환 적음)의 낮은 동반질환 부담에서 기인한 인구학적 결과",
+          "confidence": "medium"
+        }
+      ],
+      "overall_interpretation": "3개 비교 조합 중 가장 경한 위해 프로파일이나, 이는 성분이 안전해서가 아니라 소아 우발노출이 주로 경미한 반응으로 그치기 때문. 중추신경 작용 성분이라는 점에서 방심은 금물",
+      "brand_aliases": {
+        "CHILDRENS TYLENOL COLD PLUS COUGH PLUS SORE THROAT": [
+          "어린이 타이레놀 콜드 기침"
+        ]
+      }
+    },
+    {
+      "id": "apap_diphenhydramine",
+      "combination": "Acetaminophen + Diphenhydramine",
+      "brand_count": 8,
+      "brands": [
+        "ACETAMINOPHEN PM",
+        "ACETAMINOPHEN PM EXTRA STRENGTH",
+        "EXTRA STRENGTH ACETAMINOPHEN PM",
+        "PAIN RELIEF PM EXTRA STRENGTH",
+        "PANADOL PM",
+        "PERCOGESIC ORIGINAL STRENGTH",
+        "TYLENOL PM EXTRA STRENGTH",
+        "TYLENOL PM EXTRA STRENGTH, CVP HEALTH"
+      ],
+      "n_reports": 14,
+      "pct_of_total": 0.9,
+      "detail_analysis_available": true,
+      "severity": {
+        "breakdown": {
+          "심각_pct": 78.6,
+          "사망_pct": 14.3,
+          "입원_pct": 78.6,
+          "생명위협_pct": 0.0,
+          "후유장애_pct": 0.0
+        },
+        "confidence": "low",
+        "statistical_caveat": "n=14로 매우 작음. 심각·입원이 거의 동률 최고 수준, 사망도 14.3%로 높은 편이나 생명위협·후유장애 0% - 즉각적 쇼크성 위해라기보다 간부전처럼 서서히 진행되는 장기손상형 중증 패턴에 가까움"
+      },
+      "demographics": {
+        "age": {
+          "finding": "19세 미만 0%, Senior(66-80) 35.7%가 최다, Middle-Aged(28.6%)까지 합치면 41세 이상이 64.3% - 성인 전용 야간 진통제(PM) 라벨링과 일치",
+          "confidence": "high"
+        },
+        "sex": {
+          "finding": "여성 71.4% - 3개 조합 중 가장 여성 편중 뚜렷",
+          "confidence": "low",
+          "statistical_caveat": "n=14라 소수 사례 하나가 비율을 크게 흔들 수 있음"
+        },
+        "polypharmacy": {
+          "finding": "Single(단독복용) 0%, Polypharmacy(6+) 50% - 14건 전부 다약제 병용 상태"
+        }
+      },
+      "top_indications": [
+        "Unknown 35.7%",
+        "Sleep Disorder 21.4%",
+        "Pain 14.3%",
+        "Insomnia 7.1%",
+        "Toothache 7.1%"
+      ],
+      "top_reactions": [
+        "Acute hepatic failure 5건(35.7%, 최다)",
+        "Acute kidney injury",
+        "Haemorrhagic anaemia",
+        "Accidental overdose",
+        "Lower gastrointestinal haemorrhage",
+        "Overdose",
+        "Gastrointestinal haemorrhage",
+        "Drug abuse"
+      ],
+      "key_findings": [
+        {
+          "id": "day_night_double_dosing",
+          "finding": "낮에는 아세트아미노펜 단일제(Regular/Extra Strength)를 먹고 밤에는 PM 제형으로 바꿔 먹는 '주간-야간 이중 복용' 패턴이 병용약물 100%의 원인으로 추정됨",
+          "confidence": "medium",
+          "mechanism": "디펜히드라민의 강한 H1 수용체 길항(항히스타민) 작용이 뇌혈관장벽을 통과해 진정효과를 냄. 두 제품 모두에 아세트아미노펜이 들어있다는 걸 인지하지 못해 치료적 중복(therapeutic duplication) 발생 가능. 만성질환약을 함께 복용하는 중장년·고령층 특성이 더해져 병용약물 수가 구조적으로 높게 나타남"
+        },
+        {
+          "id": "hepatic_concentration",
+          "finding": "3개 조합 중 가장 뚜렷한 간독성 집중 (Acute hepatic failure 35.7%, 최다)",
+          "confidence": "high",
+          "interpretation": "주간-야간 이중복용 구조(위 항목)가 실제 급성 간부전 최다 보고로 이어지는 인과 사슬로 추정",
+          "statistical_caveat": "n=14 소표본"
+        },
+        {
+          "id": "adult_only_structural",
+          "finding": "19세 미만 0건은 (1) PM 계열이 성인 대상으로만 라벨링·판매되고, (2) 항히스타민제가 소아에서 진정 대신 역설적 흥분(paradoxical excitation) 반응을 보일 수 있어 소아 수면유도 목적으로 권장되지 않기 때문",
+          "confidence": "medium"
+        }
+      ],
+      "consumer_messages": [
+        {
+          "target": "낮/밤 진통제를 구분해서 복용하는 사람",
+          "message": "낮용과 밤용(PM) 제품 모두에 아세트아미노펜이 들어있을 수 있습니다. 하루 총 복용량을 확인하세요.",
+          "basis": "병용약물 100%, 간독성(Acute hepatic failure) 최다 보고"
+        },
+        {
+          "target": "여러 만성질환약을 복용하는 중장년·고령층",
+          "message": "야간 진통제(PM 계열) 추가 전 기존 복용약과 겹치지 않는지 약사와 상담하세요.",
+          "basis": "41세 이상 64.3%, Polypharmacy(6+) 50%"
+        }
+      ],
+      "brand_aliases": {
+        "TYLENOL PM EXTRA STRENGTH": [
+          "타이레놀 피엠"
+        ],
+        "TYLENOL PM EXTRA STRENGTH, CVP HEALTH": [
+          "타이레놀 피엠"
+        ]
+      }
+    },
+    {
+      "id": "apap_dextromethorphan_doxylamine",
+      "combination": "Acetaminophen + Dextromethorphan + Doxylamine",
+      "brand_count": 3,
+      "brands": [
+        "VICKS NYQUIL HIGH BLOOD PRESSURE COLD AND FLU",
+        "VICKS NYQUIL FOR PEOPLE WITH DIABETES COLD AND FLU",
+        "DRX CHOICE FRUIT PUNCH"
+      ],
+      "n_reports": 5,
+      "pct_of_total": 0.3,
+      "detail_analysis_available": false,
+      "note": "PDF 내 상세분석 없음. 표본이 5건으로 매우 작아 별도 분석 시 통계적 해석에 극도로 주의 필요"
+    },
+    {
+      "id": "apap_caffeine",
+      "combination": "Acetaminophen + Caffeine",
+      "brand_count": 2,
+      "brands": [
+        "PANADOL EXTRA",
+        "TENSION HEADACHE PAIN RELIEVING AID"
+      ],
+      "n_reports": 4,
+      "pct_of_total": 0.3,
+      "detail_analysis_available": false,
+      "note": "PDF 내 상세분석 없음. 표본 4건"
+    },
+    {
+      "id": "apap_dextromethorphan_doxylamine_phenylephrine",
+      "combination": "Acetaminophen + Dextromethorphan + Doxylamine + Phenylephrine",
+      "brand_count": 3,
+      "brands": [
+        "VICKS NYQUIL INTENSE FLU",
+        "VICKS NYQUIL SEVERE COLD AND FLU",
+        "VICKS NYQUIL ULTRA CONCENTRATED COLD AND FLU"
+      ],
+      "n_reports": 3,
+      "pct_of_total": 0.2,
+      "detail_analysis_available": false,
+      "note": "PDF 내 상세분석 없음. 표본 3건"
+    },
+    {
+      "id": "apap_dextromethorphan_guaifenesin_phenylephrine",
+      "combination": "Acetaminophen + Dextromethorphan + Guaifenesin + Phenylephrine",
+      "brand_count": 2,
+      "brands": [
+        "MUCINEX FAST-MAX COLD, FLU AND SORE THROAT",
+        "MUCINEX FAST-MAX COLD, FLU AND SORE THROAT MAXIMUM STRENGTH"
+      ],
+      "n_reports": 3,
+      "pct_of_total": 0.2,
+      "detail_analysis_available": false,
+      "note": "PDF 내 상세분석 없음. 표본 3건"
+    },
+    {
+      "id": "apap_guaifenesin_phenylephrine",
+      "combination": "Acetaminophen + Guaifenesin + Phenylephrine",
+      "brand_count": 1,
+      "brands": [
+        "MAXIMUM STRENGTH MUCINEX SINUS-MAX SEVERE CONGESTION AND PAIN"
+      ],
+      "n_reports": 1,
+      "pct_of_total": 0.1,
+      "detail_analysis_available": false,
+      "note": "PDF 내 상세분석 없음. 표본 1건 - 통계적 해석 불가"
+    }
+  ],
+  "cross_combination_comparison": {
+    "compared_groups": [
+      "Diphenhydramine (n=14)",
+      "Phenylephrine (n=171)",
+      "Dextromethorphan (n=36)"
+    ],
+    "mechanism_table": [
+      {
+        "combination": "Diphenhydramine",
+        "receptor_pathway": "H1 히스타민 수용체 길항(중추, BBB 통과) + 무스카린 아세틸콜린 수용체 길항(항콜린) + 과량 시 심장 Na+ 채널 차단",
+        "primary_effect": "진정·졸림, 입마름·변비·요폐 등 항콜린 증상, 과량 시 부정맥",
+        "harm_pathway": "진정 효과를 '수면 보조'로 상시 이용 → 주간/야간 제품 이중 복용 → 아세트아미노펜 누적 → 간독성(지연형)"
+      },
+      {
+        "combination": "Phenylephrine",
+        "receptor_pathway": "알파-1 아드레날린 수용체 작용(말초 혈관 평활근)",
+        "primary_effect": "혈관수축(비강 점막 부종 감소 + 전신 혈압 상승)",
+        "harm_pathway": "경구 복용 시 장·간에서 대부분 대사되어 생체이용률 1% 미만 → 효과 미체감 → 반복/과다 복용 → 위장관 출혈·심혈관 부담·'약효 없음' 보고"
+      },
+      {
+        "combination": "Dextromethorphan",
+        "receptor_pathway": "NMDA 수용체 길항 + 시그마-1 수용체 작용(+ 고용량 시 세로토닌 재흡수 억제)",
+        "primary_effect": "연수 기침중추 억제(진해), 고용량 시 해리성·환각 효과",
+        "harm_pathway": "소아용 액상·가향 제형 → 계량 오류·우발적 노출 사고, 청소년 이상에서는 남용(\"robotripping\")"
+      }
+    ],
+    "common_denominator": {
+      "finding": "세 조합 모두 아세트아미노펜은 간에서 CYP2E1 효소에 의해 소량이 NAPQI(반응성 대사산물)로 전환되며, 정상 용량에서는 글루타치온이 이를 즉시 해독함. 총 섭취량이 하루 4g을 넘으면 글루타치온이 고갈되어 NAPQI가 간세포를 직접 파괴함(급성 간부전의 공통 기전)",
+      "confidence": "high",
+      "differentiator": "세 그룹의 차이는 '어떻게 이 4g 한계를 넘게 되는가'에 있음: Diphenhydramine 조합 → 진정효과로 인지하지 못한 채 중복복용으로 넘김. Phenylephrine 조합 → 낮은 생체이용률 때문에 효과를 위해 의도적으로 초과복용하며 넘김. Dextromethorphan 조합 → 소아의 우발적 대량섭취로 넘김(다만 이 그룹은 성인용 두 그룹보다 전체 중증도가 낮게 나타남 - 소아 1회 우발노출은 성인의 반복적 만성 중복복용보다 총 노출량 자체는 적은 경우가 많기 때문으로 추정)"
+    },
+    "overarching_conclusion": "세 그룹의 이상사례 프로파일이 다른 것은 '아세트아미노펜이 다르게 작용해서'가 아니라, 부성분의 수용체 작용이 사용자의 복용 행동(반복 복용/과다 복용/우발적 노출)을 서로 다른 방향으로 유도하고, 그 결과 동일한 간독성 기전에 도달하는 경로가 갈리기 때문임"
+  },
+  "general_usage_notes_for_ai": {
+    "tone_guidance": "confidence가 'low'인 항목은 '~일 수 있습니다', '~로 추정됩니다' 같은 완곡한 표현만 사용. 표본 크기(n)가 30 미만인 그룹의 수치는 반드시 statistical_caveat과 함께 전달하고, 단독으로 인용 금지.",
+    "prohibited_claims": [
+      "이 데이터가 인과관계를 증명했다는 주장",
+      "국가/성별 간 절대 위험도 비교(보고 시스템 편향 미보정)",
+      "표본 30 미만 그룹의 수치를 확정적 사실처럼 전달",
+      "자살/의도적 과다복용 관련 세부사항을 구체적 방법론처럼 전달"
+    ],
+    "escalation_note": "사용자가 실제 응급 증상(복통+구토, 황달, 의식저하, 과다복용 의심)을 언급하면, 통계 설명보다 즉시 응급실/응급센터 방문을 권고할 것"
+  },
+  "ingredient_fallback_ko": {
+    "usage": "브랜드명이 brand_lookup에 없을 때, 사용자가 언급한 한글 성분명이 아래 키와 일치하면 해당 combination id들을 후보로 제시하세요. 후보가 여러 개면 '어떤 조합인지 정확한 제품명을 알려달라'고 되물으세요.",
+    "아세트아미노펜": [
+      "apap_single"
+    ],
+    "타이레놀": [
+      "apap_single",
+      "apap_phenylephrine",
+      "apap_chlorpheniramine_dextromethorphan",
+      "apap_dextromethorphan",
+      "apap_diphenhydramine"
+    ],
+    "디펜히드라민": [
+      "apap_diphenhydramine"
+    ],
+    "수면유도": [
+      "apap_diphenhydramine"
+    ],
+    "피엠": [
+      "apap_diphenhydramine"
+    ],
+    "PM": [
+      "apap_diphenhydramine"
+    ],
+    "아스피린": [
+      "apap_aspirin_caffeine"
+    ],
+    "카페인": [
+      "apap_aspirin_caffeine",
+      "apap_caffeine"
+    ],
+    "편두통": [
+      "apap_aspirin_caffeine"
+    ],
+    "클로르페니라민": [
+      "apap_chlorpheniramine_dextromethorphan"
+    ],
+    "덱스트로메토르판": [
+      "apap_dextromethorphan",
+      "apap_chlorpheniramine_dextromethorphan",
+      "apap_dextromethorphan_doxylamine",
+      "apap_dextromethorphan_doxylamine_phenylephrine",
+      "apap_dextromethorphan_guaifenesin_phenylephrine"
+    ],
+    "기침": [
+      "apap_dextromethorphan"
+    ],
+    "페닐레프린": [
+      "apap_phenylephrine",
+      "apap_dextromethorphan_doxylamine_phenylephrine",
+      "apap_dextromethorphan_guaifenesin_phenylephrine",
+      "apap_guaifenesin_phenylephrine"
+    ],
+    "비충혈제거": [
+      "apap_phenylephrine"
+    ],
+    "독실아민": [
+      "apap_dextromethorphan_doxylamine",
+      "apap_dextromethorphan_doxylamine_phenylephrine"
+    ],
+    "구아이페네신": [
+      "apap_dextromethorphan_guaifenesin_phenylephrine",
+      "apap_guaifenesin_phenylephrine"
+    ],
+    "가래": [
+      "apap_dextromethorphan_guaifenesin_phenylephrine",
+      "apap_guaifenesin_phenylephrine"
+    ]
+  }
+}
