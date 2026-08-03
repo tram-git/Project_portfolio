@@ -28,4 +28,4 @@ Project_Portfolio
 약물군 별 이상반응 프로파일과 부작용 신호를 기반으로 하여 이상반응 경향성을 제시하는 대시보드를 소비자에게 제공하고, 
 이를 통해 소비자에게 일반 의약품 정보 전달을 목적으로 한다.
 
-[🔗 줄기세포 분화 가능성 탐지 바로가기]()
+[🔗 의약품 이상 사례를 이용한 정보 격차 해소 바로가기](https://github.com/tram-git/Project_portfolio/tree/main/Provision%20of%20information%20on%20adverse%20drug%20reactions)
