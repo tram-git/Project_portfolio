@@ -10,6 +10,10 @@
 
   결과적으로 전문 지식 없이도 소비자가 자신에게 필요한 안전 정보에 바로 접근할 수 있도록 하여,<br>
   전문가와 일반 소비자 사이의 정보 격차를 줄이는 것을 목적으로 한다.<br><br>
+  
+<img src="https://github.com/user-attachments/assets/088592ff-84cc-4b7c-a9d0-67971dd0a37f" width="85%"/>
+<img src="https://github.com/user-attachments/assets/bc18fe68-cb7f-452f-a405-db436b5a6da6" width="85%"/>
+
 
 ### Summary
 
